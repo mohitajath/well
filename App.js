@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SignUpScreen from './src/screens/signupscreen/SignUpScreen';
-
+import Navigator from './src/navigation/navigator';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <SignUpScreen />
+      <Navigator/>
     </View>
   );
 };

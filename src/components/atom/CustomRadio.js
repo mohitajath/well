@@ -1,7 +1,7 @@
 //import liraries
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import {CheckBox} from '@rneui/base'
 
 
 const CustomRadio = () => {

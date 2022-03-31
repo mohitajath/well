@@ -1,13 +1,14 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 import COLORS from '../../theme/colors'
 import CustomInput from '../../components/atom/CustomInput';
 import CustomButton from '../../components/atom/CustomButton';
 import CustomRadio from '../../components/atom/CustomRadio';
 
-const SignUpScreen = () => {
+const SignUpScreen = ({ navigation }) => {
     return (
+
         <SafeAreaView >
             <ScrollView contentContainerStyle={{
                 paddingTop: 20,
@@ -29,13 +30,14 @@ const SignUpScreen = () => {
 
                         placeholder="Mobile No"
                     />
-                    <Text style={{
+
+                    {/* <Text style={{
                         marginTop: 20
                     }} >
                         Gender
                     </Text>
 
-                    {/* <CustomRadio /> */}
+                    <CustomRadio /> */}
 
                     <CustomInput
                         placeholder="Password"
@@ -45,13 +47,20 @@ const SignUpScreen = () => {
                     />
                     <CustomButton
                         title='SignUp' />
-                    <Text style={{
-                        alignItems: 'center', marginTop: 10,
-                        marginHorizontal: 150,
-                        fontSize: 15
+                    
+                    <View style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        marginTop: 10
                     }}>
-                        or
-                    </Text>
+
+                        <Text>Already Have an Account?</Text>
+
+                        <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')} style={{}}>
+                            <Text style={{ color: COLORS.secondary }}> Sign In</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -59,9 +68,7 @@ const SignUpScreen = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
+
     txt: {
         color: COLORS.secondary,
         fontSize: 40,
